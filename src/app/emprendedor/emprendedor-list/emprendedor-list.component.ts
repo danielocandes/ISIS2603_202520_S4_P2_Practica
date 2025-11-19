@@ -11,14 +11,17 @@ import { Emprendedor } from '../emprendedor';
 })
 export class EmprendedorListComponent implements OnInit {
   emprendedores: Emprendedor[];
+  totalEmprendedores: number;
 
   constructor(private s: EmprendedorService, private r: Router) {
     this.emprendedores = [];
+    this.totalEmprendedores = 0;
   }
 
   ngOnInit(): void {
     this.s.getEmprendedores().subscribe((data: Emprendedor[]) => {
       this.emprendedores = data;
+      this.totalEmprendedores = this.emprendedores.length;
     });
   }
 

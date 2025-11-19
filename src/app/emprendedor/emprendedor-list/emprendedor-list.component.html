@@ -1,21 +1,20 @@
-<div class="container">
-    <h1 class="mt-4">Jovenes Emprendedores Colombianos</h1>
-    <table class="table table-bordered mt-4">
-        <thead>
-            <tr style="--bs-table-bg: #0ae98a; --bs-table-color: white;">
-                <th scope="col">Nombre</th>
-                <th scope="col">Foto</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Pregrado</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let emprendedor of emprendedores" (click)="seleccionarEmprendedor(emprendedor)" style="cursor: pointer;">
-                <td>{{ emprendedor.nombre }}</td>
-                <td><img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 50px; height: auto;"></td>
-                <td>{{ emprendedor.genero }}</td>
-                <td>{{ emprendedor.pregrado }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="container mt-5">
+    <h1 class="mb-4 p-3" style="background-color: #0ae98a; color: white; border-radius: 5px;">Jovenes Emprendedores Colombianos</h1>
+    <div class="row">
+        <div class="col-2 mb-4" *ngFor="let emprendedor of emprendedores">
+            <div class="card h-100" (click)="seleccionarEmprendedor(emprendedor)" style="cursor: pointer; border: 3px solid #0ae98a;">
+                <img [src]="emprendedor.foto_url" class="card-img-top" alt="{{ emprendedor.nombre }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ emprendedor.nombre }}</h5>
+                    <p class="card-text">
+                        <strong>Género:</strong> {{ emprendedor.genero }}<br>
+                        <strong>Pregrado:</strong> {{ emprendedor.pregrado }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-info mt-4">
+        <strong>Total de emprendedores:</strong> {{ totalEmprendedores }}
+    </div>
 </div>
