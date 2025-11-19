@@ -1,4 +1,5 @@
 # ParcialPractico2202520Dsw
+Parcial desarrollado por Daniel Alejandro Ocampo Lozano - 202410656
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
